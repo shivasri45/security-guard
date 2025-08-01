@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Shield, Users, Phone, Mail, MapPin, Facebook, Linkedin, Instagram, Star, CheckCircle, Clock, Award, Eye, Target } from "lucide-react";
+import { useState } from "react";
 
 // Custom X (Twitter) Logo Component
 const XIcon = ({ className }: { className?: string }) => (
@@ -16,6 +17,74 @@ const XIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Index() {
+  // Form state management
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    department: '',
+    service: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.message) {
+      alert('Please fill in all required fields');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Please enter a valid email address');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Simulate form submission - replace with actual API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      console.log('Form submitted:', formData);
+      setSubmitStatus('success');
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        department: '',
+        service: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -471,44 +540,105 @@ export default function Index() {
             
             <div className="bg-white p-10 rounded-3xl shadow-2xl border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
-              <form className="space-y-6">
+
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
+                    <span className="text-green-800 font-medium">Message sent successfully! We'll get back to you soon.</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+                  <div className="flex items-center">
+                    <span className="text-red-800 font-medium">Something went wrong. Please try again later.</span>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
                       First Name *
                     </label>
-                    <Input placeholder="Enter your first name" className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500" />
+                    <Input
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      placeholder="Enter your first name"
+                      className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
                       Last Name *
                     </label>
-                    <Input placeholder="Enter your last name" className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500" />
+                    <Input
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      placeholder="Enter your last name"
+                      className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                      required
+                    />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     Email Address *
                   </label>
-                  <Input type="email" placeholder="Enter your email address" className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500" />
+                  <Input
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Enter your email address"
+                    className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     Phone Number *
                   </label>
-                  <Input type="tel" placeholder="Enter your phone number" className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500" />
+                  <Input
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Enter your phone number"
+                    className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     Department/Organization
                   </label>
-                  <Input placeholder="Enter your department or organization" className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500" />
+                  <Input
+                    name="department"
+                    value={formData.department}
+                    onChange={handleInputChange}
+                    placeholder="Enter your department or organization"
+                    className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     Service Required
                   </label>
-                  <select className="flex h-12 w-full rounded-xl border border-gray-200 bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="flex h-12 w-full rounded-xl border border-gray-200 bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                  >
                     <option value="">Select a service</option>
                     <option value="security">Security Guards</option>
                     <option value="manpower">Manpower Supply</option>
@@ -519,13 +649,28 @@ export default function Index() {
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     Message *
                   </label>
-                  <Textarea 
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Please describe your requirements..."
                     className="min-h-[120px] rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                    required
                   />
                 </div>
-                <Button type="submit" className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                  Send Message
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                >
+                  {isSubmitting ? (
+                    <div className="flex items-center">
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                      Sending...
+                    </div>
+                  ) : (
+                    'Send Message'
+                  )}
                 </Button>
               </form>
             </div>
