@@ -122,16 +122,31 @@ export default function Index() {
                   Our Mission
                 </h3>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We are dedicated to providing professional security guards and outsourced manpower 
-                  solutions specifically tailored for public sector offices and government departments. 
-                  Our commitment to excellence ensures that every client receives reliable, disciplined, 
+                  We are dedicated to providing professional security guards and outsourced manpower
+                  solutions specifically tailored for public sector offices and government departments.
+                  Our commitment to excellence ensures that every client receives reliable, disciplined,
                   and well-trained personnel.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  With years of experience in the industry, we understand the unique requirements 
-                  of government operations and deliver services that meet the highest standards of 
+                  With years of experience in the industry, we understand the unique requirements
+                  of government operations and deliver services that meet the highest standards of
                   professionalism and security.
                 </p>
+              </div>
+
+              {/* Professional Leadership Image */}
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+                <div className="text-center">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F84733c62b236440aa75ba906cb0ebc93%2F8b2a3f6602724765bcdfd460a25555cc?format=webp&width=800"
+                    alt="Professional leadership committed to serving government departments"
+                    className="w-full max-w-sm mx-auto rounded-2xl shadow-lg"
+                  />
+                  <div className="mt-6">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Professional Leadership</h4>
+                    <p className="text-gray-600">Committed to serving government departments with integrity and excellence</p>
+                  </div>
+                </div>
               </div>
             </div>
             
