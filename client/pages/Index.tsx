@@ -114,9 +114,10 @@ export default function Index() {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+          <div className="grid lg:grid-cols-3 gap-12 items-start">
+            {/* Mission Section */}
+            <div className="lg:col-span-2">
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-full">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                   <Target className="w-8 h-8 text-blue-600 mr-3" />
                   Our Mission
@@ -127,49 +128,62 @@ export default function Index() {
                   Our commitment to excellence ensures that every client receives reliable, disciplined,
                   and well-trained personnel.
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                   With years of experience in the industry, we understand the unique requirements
                   of government operations and deliver services that meet the highest standards of
                   professionalism and security.
                 </p>
-              </div>
 
-              {/* Professional Leadership Image */}
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                <div className="text-center">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F84733c62b236440aa75ba906cb0ebc93%2F8b2a3f6602724765bcdfd460a25555cc?format=webp&width=800"
-                    alt="Professional leadership committed to serving government departments"
-                    className="w-full max-w-sm mx-auto rounded-2xl shadow-lg"
-                  />
-                  <div className="mt-6">
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Professional Leadership</h4>
-                    <p className="text-gray-600">Committed to serving government departments with integrity and excellence</p>
+                {/* Why Choose Us - Now integrated in the same card */}
+                <div className="border-t border-gray-200 pt-8">
+                  <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                    <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
+                    Why Choose Us?
+                  </h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      "Thoroughly vetted and trained personnel",
+                      "Government compliance and documentation",
+                      "24/7 supervision and support",
+                      "Flexible contract terms",
+                      "Competitive pricing with quality assurance"
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-center group">
+                        <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
+                        <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
-            
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 text-white">
-                <h4 className="text-xl font-bold mb-6 flex items-center">
-                  <CheckCircle className="w-6 h-6 mr-3" />
-                  Why Choose Us?
-                </h4>
-                <ul className="space-y-4">
-                  {[
-                    "Thoroughly vetted and trained personnel",
-                    "Government compliance and documentation",
-                    "24/7 supervision and support",
-                    "Flexible contract terms",
-                    "Competitive pricing with quality assurance"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center group">
-                      <div className="w-2 h-2 bg-white rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                      <span className="text-white/90 group-hover:text-white transition-colors duration-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+
+            {/* Leadership Section */}
+            <div className="lg:col-span-1">
+              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 text-white text-center h-full flex flex-col justify-center">
+                <div className="mb-6">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F84733c62b236440aa75ba906cb0ebc93%2F8b2a3f6602724765bcdfd460a25555cc?format=webp&width=800"
+                    alt="Professional leadership committed to serving government departments"
+                    className="w-48 h-64 object-cover mx-auto rounded-2xl shadow-xl border-4 border-white/20"
+                  />
+                </div>
+                <h4 className="text-xl font-bold mb-3">Professional Leadership</h4>
+                <p className="text-blue-100 leading-relaxed">
+                  Committed to serving government departments with integrity, excellence, and unwavering dedication to national service.
+                </p>
+                <div className="mt-6 pt-6 border-t border-white/20">
+                  <div className="flex justify-center space-x-6 text-sm">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold">10+</div>
+                      <div className="text-blue-200">Years Leading</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold">50+</div>
+                      <div className="text-blue-200">Govt. Projects</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
