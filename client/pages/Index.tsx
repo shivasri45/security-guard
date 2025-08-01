@@ -5,6 +5,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Shield, Users, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, Star, CheckCircle, Clock, Award, Eye, Target } from "lucide-react";
 
 export default function Index() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
@@ -53,11 +63,20 @@ export default function Index() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 h-auto text-lg font-semibold shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <Button
+                size="lg"
+                onClick={() => scrollToSection('contact')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 h-auto text-lg font-semibold shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
                 <Phone className="w-5 h-5 mr-2" />
                 Contact Us Now
               </Button>
-              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-8 py-4 h-auto text-lg font-semibold">
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection('services')}
+                className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-8 py-4 h-auto text-lg font-semibold"
+              >
                 <Eye className="w-5 h-5 mr-2" />
                 View Our Services
               </Button>
@@ -191,7 +210,7 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      <section id="services" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full opacity-30">
             <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200 rounded-full blur-3xl"></div>
@@ -385,7 +404,7 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section id="contact" className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
