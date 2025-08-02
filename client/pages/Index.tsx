@@ -124,7 +124,7 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden pb-20">
         {/* Animated Background */}
@@ -156,17 +156,13 @@ export default function Index() {
               </div>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent leading-tight">
-              Elite Security &amp;
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Manpower Solutions
-              </span>
+            <h1 className="text-7xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent leading-tight">
+              Safe Guard Solution
             </h1>
 
-            <p className="text-xl lg:text-2xl mb-6 text-blue-100 font-light">
-              Serving Government Departments with Contract-Based Staffing
-            </p>
+            <h2 className="text-3xl lg:text-5xl font-semibold mb-4 text-white">
+              Elite Security & Manpower Solutions
+            </h2>
 
             <p className="text-lg mb-12 text-white/80 max-w-3xl mx-auto leading-relaxed">
               Professional, reliable, and disciplined personnel for your
@@ -205,7 +201,7 @@ export default function Index() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50 -mt-20 relative z-10">
+      <section className="py-20 bg-gray-800 -mt-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -215,14 +211,14 @@ export default function Index() {
               { number: "24/7", label: "Support Available", icon: Clock },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                <div className="bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-600">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <stat.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-4xl font-bold text-gray-900 mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <div className="text-4xl font-bold text-white mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-600 font-medium">
+                  <div className="text-sm text-gray-300 font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -233,16 +229,16 @@ export default function Index() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-6 py-2 mb-6">
-              <span className="text-blue-700 font-semibold text-sm">
+            <div className="inline-block bg-gradient-to-r from-blue-900 to-purple-900 rounded-full px-6 py-2 mb-6">
+              <span className="text-blue-300 font-semibold text-sm">
                 ABOUT US
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Excellence in Security &amp;
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {" "}
@@ -255,19 +251,19 @@ export default function Index() {
           <div className="grid lg:grid-cols-3 gap-12 items-start">
             {/* Mission Section */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-full">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <div className="bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-700 h-full">
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                   <Target className="w-8 h-8 text-blue-600 mr-3" />
                   Our Mission
                 </h3>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                <p className="text-lg text-gray-300 mb-6 leading-relaxed">
                   We are dedicated to providing professional security guards and
                   outsourced manpower solutions specifically tailored for public
                   sector offices and government departments. Our commitment to
                   excellence ensures that every client receives reliable,
                   disciplined, and well-trained personnel.
                 </p>
-                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                   With years of experience in the industry, we understand the
                   unique requirements of government operations and deliver
                   services that meet the highest standards of professionalism
@@ -275,8 +271,8 @@ export default function Index() {
                 </p>
 
                 {/* Why Choose Us - Now integrated in the same card */}
-                <div className="border-t border-gray-200 pt-8">
-                  <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                <div className="border-t border-gray-700 pt-8">
+                  <h4 className="text-xl font-bold text-white mb-6 flex items-center">
                     <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
                     Why Choose Us?
                   </h4>
@@ -290,7 +286,7 @@ export default function Index() {
                     ].map((item, index) => (
                       <div key={index} className="flex items-center group">
                         <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
-                        <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
+                        <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
                           {item}
                         </span>
                       </div>
@@ -310,9 +306,7 @@ export default function Index() {
                     className="w-48 h-64 object-cover mx-auto rounded-2xl shadow-xl border-4 border-white/20"
                   />
                 </div>
-                <h4 className="text-xl font-bold mb-3">
-                  Professional Leadership
-                </h4>
+                <h4 className="text-xl font-bold mb-3">Gaurav Kumar Singh</h4>
                 <p className="text-blue-100 leading-relaxed">
                   Committed to serving government departments with integrity,
                   excellence, and unwavering dedication to national service.
@@ -338,7 +332,7 @@ export default function Index() {
       {/* Services Section */}
       <section
         id="services"
-        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden"
+        className="py-24 bg-gray-800 relative overflow-hidden"
       >
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full opacity-30">
@@ -349,41 +343,41 @@ export default function Index() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-6 py-2 mb-6">
-              <span className="text-blue-700 font-semibold text-sm">
+            <div className="inline-block bg-gradient-to-r from-blue-900 to-purple-900 rounded-full px-6 py-2 mb-6">
+              <span className="text-blue-300 font-semibold text-sm">
                 OUR SERVICES
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Professional Staffing
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {" "}
                 Solutions
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive staffing solutions tailored for government
               departments and public sector organizations
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
-            <Card className="group relative overflow-hidden border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3 bg-gradient-to-br from-white to-blue-50">
+            <Card className="group relative overflow-hidden border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3 bg-gray-700">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="text-center pb-4 relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
                   <Shield className="w-10 h-10 text-white" />
                 </div>
-                <CardTitle className="text-3xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                <CardTitle className="text-3xl text-white group-hover:text-blue-400 transition-colors duration-300">
                   Security Guards
                 </CardTitle>
-                <CardDescription className="text-gray-600 text-base">
+                <CardDescription className="text-gray-300 text-base">
                   Elite trained personnel in professional uniforms for
                   comprehensive security coverage
                 </CardDescription>
               </CardHeader>
               <CardContent className="relative z-10">
-                <ul className="space-y-4 text-gray-700">
+                <ul className="space-y-4 text-gray-300">
                   {[
                     "Professional security personnel in standardized uniforms",
                     "24/7 security coverage for government facilities",
@@ -393,7 +387,7 @@ export default function Index() {
                   ].map((item, index) => (
                     <li key={index} className="flex items-center group/item">
                       <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4 group-hover/item:scale-125 transition-transform duration-300"></div>
-                      <span className="group-hover/item:text-gray-900 transition-colors duration-300">
+                      <span className="group-hover/item:text-white transition-colors duration-300">
                         {item}
                       </span>
                     </li>
@@ -402,22 +396,22 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="group relative overflow-hidden border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3 bg-gradient-to-br from-white to-purple-50">
+            <Card className="group relative overflow-hidden border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3 bg-gray-700">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="text-center pb-4 relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
                   <Users className="w-10 h-10 text-white" />
                 </div>
-                <CardTitle className="text-3xl text-gray-900 group-hover:text-purple-600 transition-colors duration-300">
+                <CardTitle className="text-3xl text-white group-hover:text-purple-400 transition-colors duration-300">
                   Manpower Supply
                 </CardTitle>
-                <CardDescription className="text-gray-600 text-base">
+                <CardDescription className="text-gray-300 text-base">
                   Skilled and unskilled workforce solutions for public sector
                   operations
                 </CardDescription>
               </CardHeader>
               <CardContent className="relative z-10">
-                <ul className="space-y-4 text-gray-700">
+                <ul className="space-y-4 text-gray-300">
                   {[
                     "Administrative and clerical support staff",
                     "Maintenance and housekeeping personnel",
@@ -427,7 +421,7 @@ export default function Index() {
                   ].map((item, index) => (
                     <li key={index} className="flex items-center group/item">
                       <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mr-4 group-hover/item:scale-125 transition-transform duration-300"></div>
-                      <span className="group-hover/item:text-gray-900 transition-colors duration-300">
+                      <span className="group-hover/item:text-white transition-colors duration-300">
                         {item}
                       </span>
                     </li>
@@ -440,23 +434,23 @@ export default function Index() {
       </section>
 
       {/* Uniform Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-6 py-2 mb-6">
-              <span className="text-blue-700 font-semibold text-sm">
+            <div className="inline-block bg-gradient-to-r from-blue-900 to-purple-900 rounded-full px-6 py-2 mb-6">
+              <span className="text-blue-300 font-semibold text-sm">
                 PROFESSIONAL STANDARDS
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Uniform
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {" "}
                 Excellence
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               All our personnel are provided with standardized uniforms that
               reflect professionalism and discipline
             </p>
@@ -464,8 +458,8 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 shadow-xl border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-700">
+                <h3 className="text-2xl font-bold text-white mb-6">
                   Standard Uniform Specifications
                 </h3>
                 <div className="space-y-4">
@@ -493,16 +487,16 @@ export default function Index() {
                   ].map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                      className="flex items-center p-4 bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
                     >
                       <div
                         className={`w-4 h-4 ${item.color} rounded-full mr-4`}
                       ></div>
                       <div>
-                        <span className="font-semibold text-gray-900">
+                        <span className="font-semibold text-white">
                           {item.label}:
                         </span>
-                        <span className="text-gray-700 ml-2">
+                        <span className="text-gray-300 ml-2">
                           {item.detail}
                         </span>
                       </div>
@@ -511,7 +505,7 @@ export default function Index() {
                 </div>
               </div>
 
-              <p className="text-gray-700 leading-relaxed text-lg">
+              <p className="text-gray-300 leading-relaxed text-lg">
                 Our uniform standards ensure a professional appearance that
                 instills confidence and represents the dignity of government
                 service. All uniforms are maintained to the highest standards of
@@ -520,17 +514,17 @@ export default function Index() {
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-br from-white to-blue-50 p-12 rounded-3xl shadow-xl border border-gray-100 inline-block">
+              <div className="bg-gray-800 p-12 rounded-3xl shadow-xl border border-gray-700 inline-block">
                 <div className="w-56 h-72 bg-gradient-to-b from-blue-100 via-gray-100 to-blue-100 rounded-2xl mx-auto mb-8 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10"></div>
                   <div className="text-center relative z-10">
                     <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl">
                       <Shield className="w-12 h-12 text-white" />
                     </div>
-                    <div className="text-sm text-gray-600 font-semibold mb-2">
+                    <div className="text-sm text-black font-semibold mb-2">
                       Professional
                     </div>
-                    <div className="text-sm text-gray-600 font-semibold mb-6">
+                    <div className="text-sm text-black font-semibold mb-6">
                       Security Personnel
                     </div>
                     <div className="space-y-2">
@@ -539,7 +533,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 font-medium">
+                <p className="text-gray-300 font-medium">
                   Maintaining highest standards of appearance and conduct
                 </p>
               </div>
@@ -549,22 +543,22 @@ export default function Index() {
       </section>
 
       {/* Clients Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-24 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-6 py-2 mb-6">
-              <span className="text-blue-700 font-semibold text-sm">
+            <div className="inline-block bg-gradient-to-r from-blue-900 to-purple-900 rounded-full px-6 py-2 mb-6">
+              <span className="text-blue-300 font-semibold text-sm">
                 OUR CLIENTS
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Trusted by
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {" "}
                 Government
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               We are proud to serve various government departments and public
               sector organizations across the region
             </p>
@@ -578,11 +572,11 @@ export default function Index() {
               { name: "Municipal Corp", icon: Users },
             ].map((client, index) => (
               <div key={index} className="group">
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 text-center">
+                <div className="bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-600 text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <client.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-sm font-bold text-gray-700 group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="text-sm font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
                     {client.name}
                   </div>
                 </div>
@@ -593,37 +587,38 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-white relative overflow-hidden">
+      {/* Contact Section */}
+      <section id="contact" className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-6 py-2 mb-6">
-              <span className="text-blue-700 font-semibold text-sm">
-                GET IN TOUCH
-              </span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <span className="text-blue-300 font-semibold text-sm">
+          GET IN TOUCH
+        </span>
+      </div>
+      <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Contact Our
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {" "}
                 Expert Team
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get in touch with us for all your security and manpower
-              requirements
-            </p>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        Get in touch with us for all your security and manpower
+        requirements
+      </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold text-gray-900">Get in Touch</h3>
+          <div className="grid lg:grid-cols-1 gap-16">
+      <div className="space-y-8">
+        <h3 className="text-2xl font-bold text-white">Get in Touch</h3>
               <div className="space-y-6">
                 {[
                   {
                     icon: Phone,
                     title: "Phone",
-                    detail: "+91 98765 43210",
+                    detail: "+91 73572-80403  / +91 95688-69432",
                     color: "from-blue-500 to-blue-600",
                   },
                   {
@@ -640,20 +635,20 @@ export default function Index() {
                     color: "from-indigo-500 to-indigo-600",
                   },
                 ].map((contact, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-                  >
+            <div
+              key={index}
+              className="flex items-center p-6 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700"
+            >
                     <div
                       className={`w-14 h-14 bg-gradient-to-br ${contact.color} rounded-2xl flex items-center justify-center mr-6`}
                     >
                       <contact.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900 text-lg">
-                        {contact.title}
-                      </div>
-                      <div className="text-gray-600">{contact.detail}</div>
+                <div className="font-bold text-white text-lg">
+                  {contact.title}
+                </div>
+                <div className="text-gray-300">{contact.detail}</div>
                     </div>
                   </div>
                 ))}
@@ -678,149 +673,6 @@ export default function Index() {
                 </div>
               </div>
             </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-2xl border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                Send us a Message
-              </h3>
-
-              {/* Success Message */}
-              {submitStatus === "success" && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
-                    <span className="text-green-800 font-medium">
-                      Message sent successfully! We'll get back to you soon.
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              {/* Error Message */}
-              {submitStatus === "error" && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
-                  <div className="flex items-center">
-                    <span className="text-red-800 font-medium">
-                      Something went wrong. Please try again later.
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      First Name *
-                    </label>
-                    <Input
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      placeholder="Enter your first name"
-                      className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      Last Name *
-                    </label>
-                    <Input
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      placeholder="Enter your last name"
-                      className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Email Address *
-                  </label>
-                  <Input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="Enter your email address"
-                    className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Phone Number *
-                  </label>
-                  <Input
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Enter your phone number"
-                    className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Department/Organization
-                  </label>
-                  <Input
-                    name="department"
-                    value={formData.department}
-                    onChange={handleInputChange}
-                    placeholder="Enter your department or organization"
-                    className="h-12 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Service Required
-                  </label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className="flex h-12 w-full rounded-xl border border-gray-200 bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="security">Security Guards</option>
-                    <option value="manpower">Manpower Supply</option>
-                    <option value="both">Both Services</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Message *
-                  </label>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Please describe your requirements..."
-                    className="min-h-[120px] rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? (
-                    <div className="flex items-center">
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                      Sending...
-                    </div>
-                  ) : (
-                    "Send Message"
-                  )}
-                </Button>
-              </form>
-            </div>
           </div>
         </div>
       </section>
@@ -838,7 +690,7 @@ export default function Index() {
           <div className="grid md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
               <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Security & Manpower Services
+                Safe Guard Solution
               </h3>
               <p className="text-gray-400 mb-8 max-w-md leading-relaxed">
                 Professional security guards and manpower supply services for
@@ -903,8 +755,8 @@ export default function Index() {
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
             <p className="text-gray-400">
-              &copy; 2024 Security & Manpower Services. All rights reserved. |
-              Designed with excellence for government partnerships.
+              &copy; 2024 Safe Guard Solution. All rights reserved. | Designed
+              with excellence for government partnerships.
             </p>
           </div>
         </div>
