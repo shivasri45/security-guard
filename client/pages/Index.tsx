@@ -229,7 +229,7 @@ export default function Index() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-24 bg-gray-900 relative overflow-hidden">
+      <section id="about" className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -434,7 +434,7 @@ export default function Index() {
       </section>
 
       {/* Uniform Section */}
-      <section className="py-24 bg-gray-900 relative overflow-hidden">
+      <section id="uniforms" className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -543,7 +543,7 @@ export default function Index() {
       </section>
 
       {/* Clients Section */}
-      <section className="py-24 bg-gray-800">
+      <section id="clients" className="py-24 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="inline-block bg-gradient-to-r from-blue-900 to-purple-900 rounded-full px-6 py-2 mb-6">
@@ -588,31 +588,34 @@ export default function Index() {
 
       {/* Contact Section */}
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gray-900 relative overflow-hidden">
+      <section
+        id="contact"
+        className="py-24 bg-gray-900 relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-6 py-2 mb-6">
-        <span className="text-blue-300 font-semibold text-sm">
-          GET IN TOUCH
-        </span>
-      </div>
-      <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              <span className="text-black font-semibold text-sm">
+                GET IN TOUCH
+              </span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Contact Our
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {" "}
                 Expert Team
               </span>
             </h2>
-      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-        Get in touch with us for all your security and manpower
-        requirements
-      </p>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Get in touch with us for all your security and manpower
+              requirements
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-1 gap-16">
-      <div className="space-y-8">
-        <h3 className="text-2xl font-bold text-white">Get in Touch</h3>
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-white">Get in Touch</h3>
               <div className="space-y-6">
                 {[
                   {
@@ -624,31 +627,31 @@ export default function Index() {
                   {
                     icon: Mail,
                     title: "Email",
-                    detail: "info@securitymanpower.com",
+                    detail: "safeguardsolution123@gmail.com",
                     color: "from-purple-500 to-purple-600",
                   },
                   {
                     icon: MapPin,
                     title: "Location",
                     detail:
-                      "123 Business District, Government Area, City - 110001",
+                      "Maheshpura Thakuran Near Tapeshwar Nath DwarBareilly - 243001",
                     color: "from-indigo-500 to-indigo-600",
                   },
                 ].map((contact, index) => (
-            <div
-              key={index}
-              className="flex items-center p-6 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700"
-            >
+                  <div
+                    key={index}
+                    className="flex items-center p-6 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700"
+                  >
                     <div
                       className={`w-14 h-14 bg-gradient-to-br ${contact.color} rounded-2xl flex items-center justify-center mr-6`}
                     >
                       <contact.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                <div className="font-bold text-white text-lg">
-                  {contact.title}
-                </div>
-                <div className="text-gray-300">{contact.detail}</div>
+                      <div className="font-bold text-white text-lg">
+                        {contact.title}
+                      </div>
+                      <div className="text-gray-300">{contact.detail}</div>
                     </div>
                   </div>
                 ))}
@@ -697,37 +700,27 @@ export default function Index() {
                 government departments. Trusted, reliable, and committed to
                 excellence in every service delivery.
               </p>
-              <div className="flex space-x-4">
-                {[
-                  { Icon: Facebook, href: "#" },
-                  { Icon: XIcon, href: "#" },
-                  { Icon: Linkedin, href: "#" },
-                  { Icon: Instagram, href: "#" },
-                ].map(({ Icon, href }, index) => (
-                  <a key={index} href={href} className="group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                  </a>
-                ))}
-              </div>
             </div>
 
             <div>
               <h4 className="text-xl font-bold mb-6">Quick Links</h4>
               <ul className="space-y-3">
-                {["About Us", "Services", "Uniforms", "Clients", "Contact"].map(
-                  (link, index) => (
-                    <li key={index}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ),
-                )}
+                {[
+                  { label: "About Us", sectionId: "about" },
+                  { label: "Services", sectionId: "services" },
+                  { label: "Uniforms", sectionId: "uniforms" },
+                  { label: "Clients", sectionId: "clients" },
+                  { label: "Contact", sectionId: "contact" },
+                ].map((link, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => scrollToSection(link.sectionId)}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block bg-transparent border-none text-left"
+                    >
+                      {link.label}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -735,18 +728,18 @@ export default function Index() {
               <h4 className="text-xl font-bold mb-6">Services</h4>
               <ul className="space-y-3">
                 {[
-                  "Security Guards",
-                  "Manpower Supply",
-                  "Government Contracts",
-                  "24/7 Support",
+                  { label: "Security Guards", sectionId: "services" },
+                  { label: "Manpower Supply", sectionId: "services" },
+                  { label: "Government Contracts", sectionId: "clients" },
+                  { label: "24/7 Support", sectionId: "contact" },
                 ].map((service, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
+                    <button
+                      onClick={() => scrollToSection(service.sectionId)}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block bg-transparent border-none text-left"
                     >
-                      {service}
-                    </a>
+                      {service.label}
+                    </button>
                   </li>
                 ))}
               </ul>
